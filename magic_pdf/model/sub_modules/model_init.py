@@ -3,7 +3,7 @@ from loguru import logger
 from magic_pdf.config.constants import MODEL_NAME
 from magic_pdf.model.model_list import AtomicModel
 #from magic_pdf.model.sub_modules.layout.doclayout_yolo.DocLayoutYOLO import \
-    DocLayoutYOLOModel
+#    DocLayoutYOLOModel
 from magic_pdf.model.sub_modules.layout.layoutlmv3.model_init import \
     Layoutlmv3_Predictor
 from magic_pdf.model.sub_modules.mfd.yolov8.YOLOv8 import YOLOv8MFDModel
