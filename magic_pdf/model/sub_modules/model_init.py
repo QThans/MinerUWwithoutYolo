@@ -2,7 +2,7 @@ from loguru import logger
 
 from magic_pdf.config.constants import MODEL_NAME
 from magic_pdf.model.model_list import AtomicModel
-from magic_pdf.model.sub_modules.layout.doclayout_yolo.DocLayoutYOLO import \
+#from magic_pdf.model.sub_modules.layout.doclayout_yolo.DocLayoutYOLO import \
     DocLayoutYOLOModel
 from magic_pdf.model.sub_modules.layout.layoutlmv3.model_init import \
     Layoutlmv3_Predictor
@@ -52,9 +52,9 @@ def layout_model_init(weight, config_file, device):
     return model
 
 
-def doclayout_yolo_model_init(weight, device='cpu'):
-    model = DocLayoutYOLOModel(weight, device)
-    return model
+#def doclayout_yolo_model_init(weight, device='cpu'):
+    #model = DocLayoutYOLOModel(weight, device)
+    #return model
 
 
 def ocr_model_init(show_log: bool = False,
@@ -109,11 +109,11 @@ def atom_model_init(model_name: str, **kwargs):
                 kwargs.get('layout_config_file'),
                 kwargs.get('device')
             )
-        elif kwargs.get('layout_model_name') == MODEL_NAME.DocLayout_YOLO:
-            atom_model = doclayout_yolo_model_init(
-                kwargs.get('doclayout_yolo_weights'),
-                kwargs.get('device')
-            )
+        #elif kwargs.get('layout_model_name') == MODEL_NAME.DocLayout_YOLO:
+        #    atom_model = doclayout_yolo_model_init(
+        #        kwargs.get('doclayout_yolo_weights'),
+        #        kwargs.get('device')
+        #    )
     elif model_name == AtomicModel.MFD:
         atom_model = mfd_model_init(
             kwargs.get('mfd_weights'),
